@@ -2,11 +2,12 @@
 
 # Gemini Dashboard
 ## Getting Started 
-1. In the project directory, you can run `npm start` to start the Gemini Dashboard react app.\
+1. Make sure you have Node.js installed. After cloning this project to your local, run `npm install` to install all the dependencies.
+2. In the project directory, you can run `npm start` to start the Gemini Dashboard react app.\
     Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
     The page will reload when you make changes.\
     You may also see any lint errors in the console.
-2. `cd server` and run `npm start` to start Gemini Dashboard server api
+3. `cd server` and run `npm start` to start Gemini Dashboard server api
 ## How to use Gemini Dashboard? 
 ### Login 
 * Sign in to your account using your Google credentials.
