@@ -1,13 +1,19 @@
 
 
 # Gemini Dashboard
-## Getting Started 
+## Setting up project locally
 1. Make sure you have Node.js installed. After cloning this project to your local, run `npm install` to install all the dependencies.
-2. In the project directory, you can run `npm start` to start the Gemini Dashboard react app.\
-    Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
-    The page will reload when you make changes.\
-    You may also see any lint errors in the console.
-3. `cd server` and run `npm start` to start Gemini Dashboard server api
+2. Set up environment variables:\
+   Create a `.env` file based on the provided `.env.template.`\
+   Update variable like `GOOGLE_API_KEY_DEV` with your Gemini API key.\
+   Note: If you are in development mode, all variables under the `# development` section in the `.env.template` file must be filled with their corresponding values.
+3. Create a Firebase Realtime Database project. Grab its configuration and update your `.env` accordingly.\
+   Apply the Firebase realtime database security rules which can be found in `database.rules.json`.\
+4. In the project directory, you can run `npm start` to start the Gemini Dashboard react app.\
+   Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
+   The page will reload when you make changes.\
+   You may also see any lint errors in the console.
+5. `cd server` and run `npm start` to start Gemini Dashboard API server
 ## How to use Gemini Dashboard? 
 ### Login 
 * Sign in to your account using your Google credentials.

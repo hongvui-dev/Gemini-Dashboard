@@ -1,0 +1,66 @@
+{
+  "rules": {
+    "users": {
+      "$uid": {
+        ".read": "$uid === auth.uid",
+        ".write": "$uid === auth.uid",
+        "likedWidgets": {
+            ".read": "$uid === auth.uid",
+            ".write": "$uid === auth.uid",
+        },
+        "likedTemplates": {
+          ".read": "$uid === auth.uid",
+          ".write": "$uid === auth.uid",
+        },
+        "widgets": {
+          "$widgetId": {
+            "title": {
+              ".validate": "newData.val() !== '' && newData.isString() && newData.val().length >=3 && newData.val().length <= 50"
+            },
+            "systemInstructions": {
+              ".validate": "newData.val() !== '' && newData.isString() && newData.val().length >=3 && newData.val().length <= 500"
+            },
+            "prompt": {
+              ".validate": "newData.val() !== '' && newData.isString() && newData.val().length >=3 && newData.val().length <= 500"
+            },
+            "type": {
+              ".validate": "newData.val() !== '' && newData.isString() && newData.val().length >=3 && newData.val().length <= 200"
+            },
+            "flashcardKey": {
+              ".validate": "newData.isString() && newData.val().length >=3 && newData.val().length <= 500"
+            },
+            "flashcardValue": {
+              ".validate": "newData.isString() && newData.val().length >=3 && newData.val().length <= 500"
+            },
+            "quizKey": {
+              ".validate": "newData.isString() && newData.val().length >=3 && newData.val().length <= 500"
+            },
+            "quizValue": {
+              ".validate": "newData.isString() && newData.val().length >=3 && newData.val().length <= 500"
+            },
+            "questionKey": {
+              ".validate": "newData.isString() && newData.val().length >=3 && newData.val().length <= 500"
+            },
+            "questionValue": {
+              ".validate": "newData.isString() && newData.val().length >=3 && newData.val().length <= 500"
+            },
+            "textWidgetValue": {
+              ".validate": "newData.isString() && newData.val().length >=3 && newData.val().length <= 500"
+            }
+          }
+        }
+      },
+    },
+    "publicPages": {
+      ".read": "auth != null",
+      "$pageId": {
+        ".read": "auth != null",
+        ".write": "auth != null && (!data.exists() || data.child('creatorUid').val() === auth.uid)",
+        "creatorUid": {
+          ".read": "data.val() === auth.uid",
+          ".write": "data.val() === auth.uid || !data.exists()",
+        }
+      }
+    }
+  }
+}
